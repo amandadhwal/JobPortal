@@ -39,6 +39,7 @@ userSchema.pre("save",async function()
 
 });
 
+
 userSchema.methods.createJWT=function(){
     return JWT.sign({userID:this._id},process.env.JWT_SECRET,{expiresIn:'1D'});
 }
